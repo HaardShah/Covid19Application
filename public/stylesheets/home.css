@@ -1,0 +1,299 @@
+*{
+    box-sizing: border-box;
+    font-family: mr-eaves-modern, sans-serif;
+}
+body
+{
+  	margin: 0;
+}
+
+.main
+{
+	  height: 100vh;
+	  /*background:#E0E0E0;*/
+	  background: url(images/bg.jpg) no-repeat fixed;
+      background-size: cover;
+}
+.covid_heading
+{
+	  background-color: rgb(49, 68, 85);
+    position:fixed;
+    z-index:100;
+    width:100%;
+    font-size: 5vmin;
+    color: white;
+    margin: 0%;
+    font-family: sans-serif;
+    text-indent: 34.5vw;
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+.container
+{
+  width:100%;
+  height:100%;
+
+}
+.map_buttons
+{
+    height:100%;
+    width:84%;
+    float:left;
+}
+
+/*---------------MAP AND BUTTONS-----------*/
+
+.map_container
+{
+    float:left;
+    margin-top:7%;
+    height:80%;
+    width:84%
+
+}
+
+#map
+{
+    height:70%;
+    width:70%;
+
+    margin: auto auto auto 17.5%;
+    border:2px solid rgb(49, 68, 85);
+}
+.display_setting
+{
+    display:flex;
+    width:100%;
+    padding-top:1vh;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.other_buttons
+{
+    padding-top:5vh;
+    width:100%;
+
+}
+
+.button_container
+{
+    height:20%;
+    padding-top:2vh;
+    width:60%;
+    margin: auto;
+}
+
+.button_
+{
+    margin: auto;
+
+    padding: 2%;
+    font-size: 3vmin;
+    border: none;
+
+
+      /*font-size: 3vmin;*/
+      /*height:6vmin;*/
+
+
+/*       font-size: 3vmin;
+      height:6vmin; */
+
+
+}
+
+.send_alert
+{
+    background-color: darkred;
+    color: white;
+    margin: -1vw 0 0 1vw;
+}
+.checkin_button
+{
+
+    background-color: rgb(49, 68, 85);
+    color: white;
+    width: 20vmin;
+    font-size: 3vmin;
+    margin-right: 21vh;
+}
+.checkin_address
+{
+
+    width: 20vw;
+    font-size: 3vh;
+    margin-right: -24vh;
+
+}
+
+
+
+
+
+/*--------------FAQ STYLES---------------------*/
+.faq
+{
+    height:100%;
+    width:16%;
+    float:right;
+    flex: 1 0 auto;
+    position: relative;
+    overflow:auto;
+    box-shadow: 0 20px 20px 0 rgb(0 0 0 / 20%);
+
+}
+
+
+
+.faq_heading
+{
+    margin: 55px 10px 0px;
+    text-align:center;
+    font-size:4vmin;
+    border-left:4px solid red;
+    padding: 0;
+    list-style: none;
+    color: white;
+}
+
+.faq_bg
+{
+    background:rgba(49, 68, 85, 0.9);
+}
+.faq_list
+{
+    margin-top: 5px;
+    margin-right:5px;
+    margin-left:5px;
+    padding: 0;
+    list-style: none;
+
+}
+
+.faq_list_button
+{
+  	width: 100%;
+	  margin-top: 20px;
+    padding: 0;
+    background: rgba(49, 68, 85, 0.9);
+}
+
+
+
+.faq_button
+{
+    width: 100%;
+    height:100px;
+    display:block;
+    border: none;
+    background: rgba(49, 68, 85, 0.9);
+}
+
+.faq_button:hover
+{
+background-color: #7790b6;
+transition:0.25s;
+}
+
+
+.text_format
+{
+    text-decoration: none;
+    color:white;
+    font-size:3.5vmin;
+    font-weight:bold;
+     width:100%;
+      height:100%;
+      display : block;
+      padding-top:12%;
+}
+
+.faq_button:hover .text_format
+{
+    color:#4242a1;
+}
+
+
+/*--------------------home admin buttons----------------------*/
+
+.admin_button_container
+{
+    margin:80% 5% 0%;
+
+
+
+}
+.signup_admins
+{
+    margin-top:50%;
+    padding: 6%;
+    background-color: rgb(49, 68, 85);
+    color: white;
+    width: 32.2vmin;
+    font-size: 2.7vmin;
+    border: none;
+
+}
+.manage_users
+{
+    margin-top:10%;
+    background-color: rgb(49, 68, 85);
+    color: white;
+    width: 32.2vmin;
+    font-size: 2.7vmin;
+    border: none;
+    padding: 7%;
+
+}
+.manage_venue
+{
+    margin-top:20%;
+    background-color: rgb(49, 68, 85);
+    color: white;
+    width: 25vmin;
+    font-size: 2.5vmin;
+}
+.manage_venue_manager
+{
+    background-color: rgb(49, 68, 85);
+    color: white;
+    margin-right: 32vh;
+}
+.manage_hotspots
+{
+    margin-right: -8vh;
+    background-color: rgb(49, 68, 85);
+    color: white;
+}
+
+.create_hotspots
+{
+    margin-left: 10vh;
+    background-color: rgb(49, 68, 85);
+    color: white;
+}
+
+.checkin_history
+{
+     background-color: rgb(49, 68, 85);
+    color: white;
+}
+
+.above_map_headings
+{
+    margin: -2% 0 0 17.5%;
+}
+
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+  /* For tablets: */
+
+.dashboard
+{
+    display:none;
+}
+}

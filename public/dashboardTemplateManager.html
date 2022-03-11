@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="stylesheets/dashboard.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="javascripts/page.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="446524906437-lhb7qotm0adcd8j891vm50ol8t1p0u5h.apps.googleusercontent.com">
+	<title>Manager</title>
+
+</head>
+
+
+<body>
+
+
+		<header id="bg_dashboard" class="bg_dashboard">
+			<div class="dashboard">
+				<ul class="dashboard_list">
+					<li class="dashboard_list_button">
+              			<button  class="dash_button dashboard_list_home_button" onclick="goto_manager_home()">
+                			<span class="dashboard_list_icon_container">
+                  				<span class="dashboard_icon">
+                    				<img src="stylesheets/images/home-white2.png" alt="HOME">
+                  				</span>
+                  			</span>
+                			<span class="dashboard_list_text">
+                  				HOME
+                			</span>
+              			</button>
+            		</li>
+            		<li class="dashboard_list_button">
+              			<button  class="dash_button dashboard_list_profile_button" onclick = "goto_manager_profile()">
+                			<span class="dashboard_list_icon_container">
+                  				<span class="dashboard_icon">
+                    				<img src="stylesheets/images/user-white.png" alt="PROFILE">
+                  				</span>
+                  			</span>
+                			<span class="dashboard_list_text">
+                  				PROFILE
+                			</span>
+              			</button>
+            		</li>
+            		<li class="dashboard_list_button">
+              			<button  class="dash_button dashboard_list_history_button" onclick="goto_manager_history()">
+                			<span class="dashboard_list_icon_container">
+                  				<span class="dashboard_icon">
+                    				<img src="stylesheets/images/history-white.png" alt="HISTORY">
+                  				</span>
+                  			</span>
+                			<span class="dashboard_list_text">
+                  				HISTORY
+                			</span>
+              			</button>
+            		</li>
+            	</ul>
+            	<ul class="logout_list">
+            		<li class="dashboard_list_button">
+              			<button  class="dash_button dashboard_list_logout_button" onclick="logOut()">
+                			<span class="dashboard_list_icon_container">
+                  				<span class="dashboard_icon">
+                    				<img src="stylesheets/images/logout2.png" alt="HISTORY">
+                  				</span>
+                  			</span>
+                			<span class="dashboard_list_text">
+                  				LOGOUT
+                			</span>
+
+              			</button>
+            		</li>
+				</ul>
+			</div>
+		</header>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Check-In History Results</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+        <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="javascripts/page.js"></script>
+        <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+    </head>
+    <body>
+        <header>Check-In History</header>
+        <div class= "dashboard"></div>
+            <table>
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+
+        <script >
+            $(function (){
+                $(".dashboard").load("dashboardTemplateHealth.html");
+            });
+        </script>
+    </body>
+</html>

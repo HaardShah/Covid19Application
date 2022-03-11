@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Manage Hotspots</title>
+    <link href="stylesheets/app.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+</head>
+
+<body id="body" onload="checkAdmin();displayAllHotspots();" style="display:none;">
+    <header>Manage Hotspots</header>
+    <div class= "dashboard"></div>
+    <div class="content-manage">
+        <div class="hidden">
+            <section class="address-toggles">
+                <div>
+                    <label for="stNum">Street Number: </label>
+                </div>
+                <div>
+                    <input type="search" placeholder="(Unit Number/)Street No.." id="stNum">
+                </div>
+                <div></div>
+                <div>
+                    <label for="stName">Street Name: </label>
+                </div>
+                <div>
+                    <input type="search" id="stName" placeholder="Street Name...">
+                </div>
+                <div>
+                    <label for="suburb">Suburb: </label>
+                </div>
+                <div>
+                    <input type="search" id="suburb" placeholder="Suburb">
+                </div>
+                <div></div>
+                <div>
+                    <label for="postcode">Postcode: </label>
+                </div>
+                <div>
+                    <input type="search" id="postcode" placeholder="Postcode...">
+                </div>
+                <div>
+                    <label for="states">State: </label>
+                </div>
+                <div class="span-2-users">
+                    <select id="states">
+                      <option>Please Select an Option: </option>
+                      <option>SA</option>
+                      <option>VIC</option>
+                      <option>QLD</option>
+                      <option>WA</option>
+                      <option>NT</option>
+                      <option>TAS</option>
+                      <option>ACT</option>
+                      <option>NSW</option>
+                    </select>
+                </div>
+            </section>
+        </div>
+        <div class="not-hidden">
+            <section class="toggles-user">
+                <div>
+                    <label for="vname">Venue Name: </label>
+                </div>
+                <div>
+                    <input type="search" placeholder="Venue Name..." id="vname">
+                </div>
+                <div></div>
+                <div>
+                    <label for="vname">Date of Check-In: </label>
+                </div>
+                <div>
+                    <input type="date" id="date">
+                </div>
+                <div>
+                    <label for="startTime">Start of timeframe: </label>
+                </div>
+                <div>
+                    <input type="time" id="startTime">
+                </div>
+                <div></div>
+                <div>
+                    <label for="endTime">End of timeframe: </label>
+                </div>
+                <div>
+                    <input type="time" id="endTime">
+                </div>
+            </section>
+        </div>
+        <div class="button-div-user">
+            <div></div>
+            <div>
+                <button onclick="refineHotspots()">Refine Search</button>
+            </div>
+            <div class="address-toggle-button">
+                <button id="toggle-button" onclick="showHideToggles()">Search by Address</button>
+            </div>
+        </div>
+        <section class="table-manage">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hotspot ID</th>
+                        <th>Name of Venue</th>
+                        <th>Venue Address</th>
+                        <th>Venue Phone No.</th>
+                        <th>Start Date</th>
+                        <th>Delete Hotspot</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+    <script src="javascripts/filter.js"></script>
+    <script >
+        $(function (){
+            $(".dashboard").load("dashboardTemplateHealth.html");
+        });
+    </script>
+    <script src="javascripts/page.js"></script>
+</body>
+
+</html>

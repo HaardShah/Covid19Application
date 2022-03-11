@@ -1,0 +1,88 @@
+.bg_dashboard
+
+{
+    padding:0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 12vmin;
+    z-index: 99;
+    background-color: rgb(49, 68, 85);
+
+}
+
+.dashboard
+{
+padding:0;
+
+}
+
+
+.dashboard_list
+{
+	margin-top: 150px;
+    padding: 0;
+    list-style: none;
+}
+
+.dashboard_list_button
+{
+	width: 100%;
+	margin-top: 25px;
+    padding: 0;
+}
+.logout_list
+{
+    margin-top: 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.dashboard_list_icon_container
+{
+
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    margin: 0 auto;
+    color: white;
+    padding:0;
+}
+
+.dash_button
+{
+
+    width: 100%;
+    border: none;
+    /*background: rgb(9, 68, 115);*/
+    background-color: rgb(49, 68, 85);
+    opacity:1;
+    padding:0;
+}
+
+.dash_button:hover {
+  background-color: #032c62;
+  transition:0.3s;
+}
+
+.dashboard_list_text
+{
+	transition: none;
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    opacity: 1;
+    text-align: center;
+    display: block;
+    line-height: 1.4;
+    border-radius: 0;
+    margin: 3px 0 0;
+    padding: 0;
+    color: white;
+    white-space: normal;
+    word-wrap: inherit;
+}

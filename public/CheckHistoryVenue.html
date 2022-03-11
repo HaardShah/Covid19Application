@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Venue Check-in History</title>
+    <link href="stylesheets/app.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+</head>
+
+<body id="body" onload="checkVenman()" style="display:none;">
+    <header>Check-In History</header>
+    <div class= "dashboard"></div>
+    <div class="content-venue">
+        <section class="toggles-venue">
+            <div>
+                <label for="fname">Given Name: </label>
+            </div>
+            <div>
+                <input type="search" placeholder="Given Name..." id="fname">
+            </div>
+            <div></div>
+            <div>
+                <label for="date">Date of Check-In: </label>
+            </div>
+            <div>
+                <input type="date" id="date">
+            </div>
+            <div>
+                <label for="sname">Surname: </label>
+            </div>
+            <div>
+                <input type="search" id="sname" placeholder="Surname...">
+            </div>
+            <div></div>
+            <div>
+                <label for="startTime">Start of Timeframe: </label>
+            </div>
+            <div>
+                <input type="time" id="startTime">
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div>
+                <label for="endTime">End of Timeframe: </label>
+            </div>
+            <div>
+                <input type="time" id="endTime">
+            </div>
+        </section>
+        <div class="button-div-venue">
+            <button class="button-venue" name="refine-button" onclick="getVenueID()">Refine Search</button>
+        </div>
+        <section class="table-venue">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Given Name</th>
+                        <th>Surname</th>
+                        <th>Mobile Number</th>
+                        <th>Check-in Date</th>
+                        <th>Check-in Time</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+    <script>
+        $(function (){
+            $(".dashboard").load("dashboardTemplateManager.html");
+        });
+    </script>
+    <script src="javascripts/filter.js"></script>
+    <script src="javascripts/page.js"></script>
+</body>
+
+</html>

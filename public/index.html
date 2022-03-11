@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>COVID-19 TRACER</title>
+
+        <link rel="stylesheet" href="stylesheets/login-signup.css">
+        <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="446524906437-lhb7qotm0adcd8j891vm50ol8t1p0u5h.apps.googleusercontent.com">
+        <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+    </head>
+
+    <body>
+        <header>COVID-19 TRACER</header>
+
+        <div class="login_form" style="display: block">
+
+
+            <div class="login_container">
+
+                <div class="vertical_line">
+                    <span class="vertical_line_text">OR</span>
+                </div>
+
+                <div class="login_area">
+                    <label for="email">Email</label>
+                    <br>
+                    <input class="info_input" type="text" id="email" placeholder="Enter your email or username" required>
+
+                    <br>
+
+                    <label for="password">Password</label>
+                    <br>
+                    <input class="password_input" type="password" id="password" placeholder="Enter your password" required>
+                    <a href="https://iforgot.apple.com/password/verify/appleid">Forgot your password?</a>
+
+                    <div class="radio_buttons">
+                        <input class="radio_css" id="radiouser" type="radio" name="user_type" value="user" checked> User
+                        <input class="radio_css" id="radiovenue" type="radio" name="user_type" value="venue_manager"> Venue Manager
+                        <input class="radio_css" id="radioho" type="radio" name="user_type" value="health_official"> Health Official
+                    </div>
+
+                    <hr>
+
+                    <button onclick="login()">Login</button>
+
+                    <hr>
+
+                    <p class="create_label_text">Don't have an account? Click below to create one!</p>
+                    <button onclick="show_signup()">Create Account</button>
+
+                </div>
+
+                <div class="socials_area">
+                   <button class="g-signin2" data-onsuccess="onSignIn">Login with Google</button>
+                </div>
+
+            </div>
+            <footer>@Copyright The Fellas 2021 - All Rights Reserved.</footer>
+
+        </div>
+
+        <div class="signup_form" style="display: none">
+
+
+            <div class="signup_container">
+
+                <div class="signup_container_field">
+                    <div class="sign_up_heading"><h1>Sign Up</h1></div>
+                    <div></div>
+                    <div></div>
+                    <div class="back_to_login_div">
+                        <button onclick="show_login()">Back to Login</button>
+                    </div>
+
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                    <div class="signup_labels"><label for="first_name">First Name</label></div>
+                    <div></div>
+                    <div class="signup_labels"><label for="last_name">Last Name</label></div>
+                    <div></div>
+
+                    <div class="left_input_span"><input class="info_input" type="text" id="first_name" placeholder="First Name" required></div>
+                    <div class="right_input_span"><input class="info_input" type="text" id="last_name" placeholder="Last Name" required></div>
+
+                    <div class="signup_labels"><label for="dob">Date Of Birth</label></div>
+                    <div></div>
+                    <div class="signup_labels"><label for="ph">Phone Number</label></div>
+                    <div></div>
+
+                    <div class="left_input_span"><input class="info_input" type="date" id="dob"  required></div>
+                    <div class="right_input_span"><input class="info_input" type="tel" id="ph" placeholder="Enter your phone number" required></div>
+
+                    <div class="signup_labels"><label for="email">Email</label></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                    <div class="email_input_span"><input class="info_input" type="text" id="signup_email" placeholder="Enter your email" required></div>
+
+                    <div class="signup_labels"><label>Address</label></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                    <div class="str_num_input_span"><input class="info_input" type="text" id="streetnum" placeholder="Street number" required></div>
+                    <div class="str_name_input_span"><input class="info_input" type="text" id="streetname" placeholder="Street name" required></div>
+                    <div></div>
+
+                    <div class="suburb_input_span"><input class="info_input" type="text" id="suburb" placeholder="Suburb" required></div>
+                    <div class="postcode_input_span"><input class="info_input" type="number" id="postcode" placeholder="Postcode" required></div>
+                    <div class="state_input_span">
+                        <select name="state" id="state" required>
+                        <option value="" disabled selected hidden>State</option>
+                        <option value="SA">SA</option>
+                        <option value="VIC">VIC</option>
+                        <option value="NSW">NSW</option>
+                        <option value="QLD">QLD</option>
+                        <option value="WA">WA</option>
+                        <option value="TAS">TAS</option>
+                      </select></div>
+
+                    <div class="signup_labels"><label for="signup_password">Password</label></div>
+                    <div></div>
+                    <div class="signup_labels"><label for="repeat_password">Repeat Password</label></div>
+                    <div></div>
+
+                    <div class="left_input_span"><input class="info_input" type="password" id="signup_password" placeholder="Enter password" required></div>
+                    <div class="right_input_span"><input class="info_input" type="password" id="repeat_password" placeholder="Enter password again" required></div>
+
+                    <label class="email_notis">
+                        <input class="checkbox" type="checkbox" id="emailNoti">Receive email notifications for current hotspots
+                    </label>
+
+                    <div class="checkbox_class"><input id="sign_up_as_vm" type="checkbox" name="venue_manager" value="venue_manager"> Sign up as a venue manager</div>
+
+
+                    <label class="tANDc_label">
+                        <input class="checkbox" type="checkbox" id="terms_cond"><a href="https://www.apple.com/au/legal/internet-services/terms/site.html">Agree to Terms & Conditions</a>
+                    </label>
+                    <!--<div class="checkbox_class"><input id="sign_up_as_vm" type="checkbox" name="venue_manager" value="venue_manager"> Sign up as a venue manager</div>-->
+
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+
+                    <div class="submit_button"> <button onclick="signup()">Submit</button></div>
+
+
+                </div>
+            </div>
+
+            <footer>@Copyright The Fellas 2021 - All Rights Reserved.</footer>
+
+        </div>
+    <script src="javascripts/login-signup.js"></script>
+    <script src="javascripts/page.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    </body>
+
+</html>

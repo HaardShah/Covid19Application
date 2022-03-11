@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Hotspot</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascripts/page.js"></script>
+    <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+
+</head>
+<body id="body" onload="checkAdmin()" style="display:none;">
+    <div class= "dashboard">
+        </div>
+    <header>Create Hotspot</header>
+    <div class="content-create">
+        <section class="toggles-create">
+            <div>
+                <label for="venueid">Venue ID:</label>
+            </div>
+            <div>
+                <input id="venueid" type="text" placeholder="0001">
+            </div>
+            <div>
+                <label for="startdate">Enter Start date:</label>
+            </div>
+            <div>
+                <input id="startdate" type="date">
+            </div>
+            <div>
+                <label for="starttime">Enter Start of Timeframe:</label>
+            </div>
+
+            <div>
+                <input id="starttime" type="time">
+            </div>
+            <div></div>
+            <div></div>
+
+
+
+            <div class="button-admin-div">
+                <button class="button-admin" onclick="createHotspot()">Create Hotspot</button>
+            </div>
+        </section>
+    </div>
+<script>
+    $(function (){
+       $(".dashboard").load("dashboardTemplateHealth.html");
+
+    });
+
+</script>
+</body>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Venue Information</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+
+
+</head>
+<body id="body"  onload="checkVenman();getVenueInfo();showVenueID();" style="display:none;">
+     <div class= "dashboard">
+        </div>
+    <header>Edit Venue Information</header>
+
+    <div class="content-venueinfo">
+        <section class="toggles-venueinfo">
+        <div>
+            <label for="vname">Venue Name:</label>
+        </div>
+        <div class="manager_venueid"></div>
+        <div class="span-2-columns">
+            <input id="vname" class="input" type="text" placeholder="Venue Name">
+        </div>
+
+        <div >
+            <label for="vcontactnum">Venue Number:</label>
+        </div>
+        <div><label for="vcapacity">Venue Capacity:</label></div>
+        <div>
+            <input id="vcontactnum" class="input" type="text" placeholder="08xxxxxxxx">
+        </div>
+
+        <div >
+
+            <input id="vcapacity" class="input" type="number" placeholder="Capacity" >
+        </div>
+
+        <div >
+            <label for="vstreetnum">Street no:</label>
+        </div>
+        <div><label for="vstreetname">Street Name:</label></div>
+        <div>
+            <input  id="vstreetnum" type="text" placeholder="Street No.">
+        </div>
+        <div>
+            <input  id="vstreetname" type="text" placeholder="Street Name">
+        </div>
+        <div>
+            <label for="vsuburb">Suburb:</label>
+        </div>
+
+        <div class="span-2-columns">
+            <input  id="vsuburb" type="text" placeholder="Suburb">
+        </div>
+        <div><label for="vpostcode">Post code:</label></div>
+        <div>
+            <label for="state">State:</label>
+        </div>
+        <div>
+            <input  id="vpostcode" type="text" placeholder="Postcode">
+        </div>
+
+        <div class="state_input_span">
+                        <select name="state" id="state">
+                        <option value="" disabled selected hidden>State</option>
+                        <option value="SA">SA</option>
+                        <option value="VIC">VIC</option>
+                        <option value="NSW">NSW</option>
+                        <option value="QLD">QLD</option>
+                        <option value="WA">WA</option>
+                        <option value="TAS">TAS</option>
+                      </select></div><div></div>
+
+        <div class="span-2-columns">
+            <button class="button-venueinfo" onclick="submitVenueInfo()">Submit</button>
+        </div>
+
+
+    </section>
+    </div>
+
+
+<script >
+    $(function (){
+       $(".dashboard").load("dashboardTemplateManager.html");
+
+    });
+
+</script>
+<script src="javascripts/page.js"></script>
+</body>

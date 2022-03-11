@@ -1,0 +1,141 @@
+<!--The html file consist of the user home page which uses the dashBoardTemplateManager.html to display-->
+<!--to display the dashboard that have links to nevagate between different pages and features.-->
+<!--It also contains FAQS for the users to update them with the COVID-19.-->
+<!--The page consist of the Main div which contains various other divs that uses float property and these-->
+<!--sub divs contains various diffrent divs, to holds the maps, faq and different features.-->
+
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="stylesheets/home.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascripts/page.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
+	<title>Manager</title>
+	<link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+    <style>
+
+    /*#map {*/
+
+    /*    position:absolute;*/
+    /*    top: 17vh;*/
+    /*    left: 12.5vw;*/
+    /*    height: 65%;*/
+    /*    width: 65%;*/
+    /*    border: 2px solid rgb(49, 68, 85);*/
+
+    /*}*/
+
+    </style>
+</head>
+
+<body id="body" onload="checklogin()" style="display:none;" >
+    <div class='main'>
+        <header class="covid_heading">
+            COVID-19 TRACER
+        </header>
+        <div class= "dashboard">
+        </div>
+        <div class = "container">
+            <div class = "map_container">
+                <h1 class="above_map_headings">Current Hotspots</h1>
+                <div id="map"></div>
+                <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+            <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+            <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiYXFtYWxwIiwiYSI6ImNrcHA1Y2VuZzAwNGIycG1vdnF3OXpwODgifQ.ZeE-1i6huxUHpYEtlhs_IQ';
+
+            var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+
+            var coordinates = Array();
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [138.5999, -34.9274],
+                zoom: 10
+                });
+                map.on('load', function() {
+                map.resize();
+            });
+             updatemap();
+            //  document.getElementById("map").style.display = "block";
+
+
+            </script>
+            <div class = "button_container">
+                    <div class=" display_setting user_buttons">
+                        <button onclick="goto_manager_venue_info()" class="button_ manage_venue_manager">Manage Venue Information</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+             <div class = "faq_bg faq">
+                <div class="faq_heading">
+                    <h>FAQS</h>
+                </div>
+                <div class="faq_bg faq_container">
+				    <ul class="faq_bg faq_list">
+					    <li class="faq_list_button">
+              		    	<button  class="faq_button faq_list_1_button" >
+                                <a class="text_format" href="https://www.health.gov.au/node/18602/coronavirus-covid-19-advice-for-older-people-and-carers" target="_blank">Who is most at risk?</a>
+              		    	</button>
+            	    	</li>
+            	    	<li class="faq_list_button">
+              		    	<button  class="faq_button faq_list_2_button">
+                            <a class="text_format" href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html" target="_blank">What are the symptoms?</a>
+
+              		    	</button>
+            	    	</li>
+            	    	<li class="faq_list_button">
+              			    <button  class="faq_button faq_list_3_button">
+                            <a class="text_format" href="https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19-how-is-it-transmitted" target="_blank">How does COVID-19 spread?</a>
+              		    	</button>
+            		    </li>
+            		    <li class="faq_list_button">
+              		    	<button  class="faq_button faq_list_4_button">
+                            <a class="text_format" href="https://www.sahealth.sa.gov.au/wps/wcm/connect/public+content/sa+health+internet/conditions/infectious+diseases/covid-19/testing+and+tracing/testing+for+covid-19" target="_blank">Who should be tested?</a>
+              		    	</button>
+              		    </li>
+              		 <!--   <li class="faq_list_button">-->
+              		 <!--   	<button  class="faq_button faq_list_5_button">-->
+                 <!--           <a class="text_format" href="https://www.health.gov.au/initiatives-and-programs/covid-19-vaccines?gclid=Cj0KCQjw8IaGBhCHARIsAGIRRYqf3oR3gwwX7ak-8dBjmD3tttSHPbVceKU7J16_lHiF763VbbE8uEkaAqzfEALw_wcB&gclsrc=aw.ds" target="_blank">Is there a COVID-19 vaccine available?</a>-->
+          		    	<!--</button>-->
+              		 <!--   </li>-->
+                	</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script >
+        $(function (){
+           $(".dashboard").load("dashboardTemplateManager.html");
+
+        });
+
+    </script>
+    <script >
+       
+
+        $(function() {
+            $('.faq_list').hover(function() {
+                $('.faq_heading').css("background", "#ccc");//.css("background", "linear-gradient(to left,red +100-interval+%,blue +interval+%)right");
+
+             },
+             function() {
+                 // on mouseout, reset the background colour
+                 $('.faq_heading').css('background', '');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

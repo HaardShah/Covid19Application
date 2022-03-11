@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up Admin/Health Official</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascripts/page.js"></script>
+    <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+</head>
+
+<body id="body" onload="checkAdmin()" style="display:none;">
+    <div class= "dashboard">
+        </div>
+    <header>Sign up Admin/Health Official</header>
+    <div class="content-signupHO">
+    <section class="toggles-signupHO">
+        <div>
+            <label >First Name:</label>
+        </div>
+        <div>
+            <label>Last Name:</label>
+        </div>
+        <div>
+            <input id="first_name" class="input" type="text" placeholder="First Name">
+        </div>
+        <div>
+            <input id="last_name" class="input" type="text" placeholder="Given Name">
+        </div>
+
+        <div>
+            <label>Date Of Birth:</label>
+        </div>
+            <label>Contact Number:</label>
+        <div>
+            <input id="dob" class="input" type="date">
+        </div>
+
+        <div>
+            <input id="ph" class="input" type="text" placeholder="contact number">
+        </div>
+
+        <div class="span-2-columns">
+            <label >Email:</label>
+        </div>
+        <div class="span-2-columns">
+            <input id="email" class="input" type="text" placeholder="Please enter your email">
+        </div>
+
+
+
+        <div >
+            <label for="streetnum">Street no:</label>
+        </div>
+        <div><label for="streetname">Street Name:</label></div>
+        <div>
+            <input  id="streetnum" type="text" placeholder="Street Number">
+        </div>
+        <div>
+            <input  id="streetname" type="text" placeholder="Street Name">
+        </div>
+        <div>
+            <label for="suburb">Suburb:</label>
+        </div>
+
+        <div class="span-2-columns">
+            <input  id="suburb" type="text" placeholder="Suburb">
+        </div>
+        <div><label for="postcode">Post code:</label></div>
+        <div>
+            <label for="state">State:</label>
+        </div>
+        <div>
+            <input  id="postcode" type="text" placeholder="Postcode">
+        </div>
+        <div class="state_input_span">
+                        <select name="state" id="state" required>
+                        <option value="" disabled selected hidden>State</option>
+                        <option value="SA">SA</option>
+                        <option value="VIC">VIC</option>
+                        <option value="NSW">NSW</option>
+                        <option value="QLD">QLD</option>
+                        <option value="WA">WA</option>
+                        <option value="TAS">TAS</option>
+                      </select></div>
+
+        <div>
+            <label >Password:</label>
+        </div>
+        <div>
+            <label >Re-enter Password:</label>
+        </div>
+        <div>
+            <input id="signup_password" type="password" placeholder="Please enter your password">
+        </div>
+        <div>
+            <input id="repeat_password" class="input" type="password" placeholder="Please re-enter your password"><br><br>
+        </div>
+        <label for="terms_cond_email" class="email_notis">
+            <input class="checkbox" type="checkbox" id="terms_cond_email">Receive email notifications for current hotspots
+        </label>
+        <label class="tANDc_label">
+                <input class="checkbox" type="checkbox" id="terms_cond"><a href="https://www.apple.com/au/legal/internet-services/terms/site.html">Agree to Terms & Conditions</a>
+        </label>
+        <div class="span-2-columns">
+            <button class="button-signupHO" onclick="signupAdmin()">Sign up</button>
+        </div>
+    </section>
+    </div>
+
+    <script src="javascripts/page.js"></script>
+    <script >
+    $(function (){
+       $(".dashboard").load("dashboardTemplateHealth.html");
+
+    });
+
+</script>
+</body>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Check-in History</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascripts/page.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
+    <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+</head>
+<body id="body"  onload="checklogin();printAllCheckins();" style="display:none;">
+    <header>Check-In History</header>
+    <div class= "dashboard"></div>
+    <div class="content-user" style="display:block;">
+        <div class="hidden">
+            <section class="address-toggles">
+                <div>
+                    <label for="stNum">Street Number: </label>
+                </div>
+                <div>
+                    <input type="search" placeholder="(Unit Number/)Street No.." id="stNum">
+                </div>
+                <div></div>
+                <div>
+                    <label for="stName">Street Name: </label>
+                </div>
+                <div>
+                    <input type="search" id="stName" placeholder="Street Name...">
+                </div>
+                <div>
+                    <label for="suburb">Suburb: </label>
+                </div>
+                <div>
+                    <input type="search" id="suburb" placeholder="Suburb">
+                </div>
+                <div></div>
+                <div>
+                    <label for="postcode">Postcode: </label>
+                </div>
+                <div>
+                    <input type="search" id="postcode" placeholder="Postcode...">
+                </div>
+                <div>
+                    <label for="states">State: </label>
+                </div>
+                <div class="span-2-users">
+                    <select id="states">
+                      <option>Please Select an Option: </option>
+                      <option>SA</option>
+                      <option>VIC</option>
+                      <option>QLD</option>
+                      <option>WA</option>
+                      <option>NT</option>
+                      <option>TAS</option>
+                      <option>ACT</option>
+                      <option>NSW</option>
+                    </select>
+                </div>
+            </section>
+        </div>
+        <div class="not-hidden">
+            <section class="toggles-user">
+                <div>
+                    <label for="vname">Venue Name: </label>
+                </div>
+                <div>
+                    <input type="search" placeholder="Venue Name..." id="vname">
+                </div>
+                <div></div>
+                <div>
+                    <label for="vname">Date of Check-In: </label>
+                </div>
+                <div>
+                    <input type="date" id="date">
+                </div>
+                <div>
+                    <label for="startTime">Start of timeframe: </label>
+                </div>
+                <div>
+                    <input type="time" id="startTime">
+                </div>
+                <div></div>
+                <div>
+                    <label for="endTime">End of timeframe: </label>
+                </div>
+                <div>
+                    <input type="time" id="endTime">
+                </div>
+            </section>
+        </div>
+        <div class="button-div-user">
+            <div class="map-toggle-button">
+                <button onclick="showMap()">View All Check-ins on Map</button>
+            </div>
+            <div>
+                <button onclick="refineSearchUser()">Refine Search</button>
+            </div>
+            <div class="address-toggle-button">
+                <button id="toggle-button" onclick="showHideToggles()">Search by Address</button>
+            </div>
+        </div>
+        <section class="table-user">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name of Venue</th>
+                        <th>Venue Address</th>
+                        <th>Phone Number</th>
+                        <th>Check-in Date</th>
+                        <th>Check-in Time</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+    <div class="map-container-user" style="display:none;">
+        <div id="map-user"></div>
+            <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+            <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoiYXFtYWxwIiwiYSI6ImNrcHA1Y2VuZzAwNGIycG1vdnF3OXpwODgifQ.ZeE-1i6huxUHpYEtlhs_IQ';
+
+                var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+
+                var coordinates = Array();
+                var map = new mapboxgl.Map({
+                    container: 'map-user',
+                    style: 'mapbox://styles/mapbox/streets-v11',
+                    center: [138.5999, -34.9274],
+                    zoom: 10
+                    });
+            </script>
+    </div>
+    <div class="table-button-div" style="display:none;">
+            <button id="table-button" onclick="showTable()">View Check-in Table</button>
+    </div>
+    <script src="javascripts/filter.js"></script>
+    <script >
+        $(function (){
+            $(".dashboard").load("dashboardTemplateUser.html");
+        });
+    </script>
+    <script src="javascripts/page.js"></script>
+</body>
+
+</html>

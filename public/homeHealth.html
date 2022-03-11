@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="stylesheets/home.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascripts/page.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
+	<title>Admin</title>
+	<link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+    <style>
+
+    /*#map {*/
+
+    /*    position:absolute;*/
+    /*    top: 17vh;*/
+    /*    left: 12.5vw;*/
+    /*    height: 65%;*/
+    /*    width: 65%;*/
+    /*    border: 2px solid rgb(49, 68, 85);*/
+
+    /*}*/
+
+    </style>
+</head>
+
+<body id="body" onload="checklogin()" style="display:none;" >
+    <div  class="main" > <!--changed single quotes to double quotes,onclick="show_health_official_homepage()",style="display:block;"-->
+        <header class="covid_heading">
+            COVID-19 TRACER
+        </header>
+        <div class= "dashboard">
+        </div>
+        <div class = "container">
+            <div class = "map_container">
+                <h1 class="above_map_headings">Current Hotspots</h1>
+                <div id="map"></div>
+                <script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+            <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+            <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiYXFtYWxwIiwiYSI6ImNrcHA1Y2VuZzAwNGIycG1vdnF3OXpwODgifQ.ZeE-1i6huxUHpYEtlhs_IQ';
+
+            var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+
+            var coordinates = Array();
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [138.5999, -34.9274],
+                zoom: 10
+                });
+                map.on('load', function() {
+                map.resize();
+            });
+             updatemap();
+
+            //  document.getElementById("map").style.display = "block";
+
+
+            </script>
+            <div class = "button_container">
+                    <div class=" display_setting user_buttons">
+                        <button onclick="goto_health_manage_hotspot()" class="button_ manage_hotspots">Manage Hotspots</button>
+                        <button onclick="goto_health_create_hotspot()" class="button_ create_hotspots">Create Hotspot</button>
+                    </div>
+                    <div class = "display_setting other_buttons">
+                        <button class="button_ send_alert" onclick="getEmails()">SEND ALERT</button>
+                    </div>
+                </div>
+            </div>
+
+
+             <div class = "faq">
+
+                <div class="admin_button_container faq_container">
+				    <button onclick="get_signup_admins()" class="signup_admins">Sign-up Admin</button>
+				    <button onclick="go_to_manage()" class=" manage_users">Manage Venue/Users</button>
+				    <!--<button onclick="show_manage_venue()" class=" manage_venue">MANAGE VENUE</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="javascripts/manage_users.js"></script>
+    <script src="javascripts/page.js"></script>
+    <script >
+        $(function (){
+           $(".dashboard").load("dashboardTemplateHealth.html");
+
+        });
+
+    </script>
+<script >
+
+    $(function() {
+        $('.faq_list').hover(function() {
+            $('.faq_heading').css("background", "#ccc");//.css("background", "linear-gradient(to left,red +100-interval+%,blue +interval+%)right");
+
+         },
+         function() {
+             // on mouseout, reset the background colour
+             $('.faq_heading').css('background', '');
+        });
+    });
+</script>
+</body>
+
+
+</html>

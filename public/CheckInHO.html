@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Check In History (Admin)</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="javascripts/page.js"></script>
+    <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+</head>
+<body id="body" onload="checkAdmin()" style="display:none;">
+    <header>Check-In History</header>
+    <div class= "dashboard"></div>
+    <div class="content-admin">
+        <div class="hidden">
+            <section class="address-toggles-admin">
+                <div>
+                    <label for="stNum-admin">Street Number:</label>
+                </div>
+                <div>
+                    <label for="stName-admin">Street Name:</label>
+                </div>
+                <div>
+                    <input id="stNum-admin" type="text" placeholder="Street Number...">
+                </div>
+                <div>
+                    <input id="stName-admin" type="text" placeholder="Street Name...">
+                </div>
+                <div>
+                    <label for="suburb-admin">Suburb:</label>
+                </div>
+                <div></div>
+                <div class="span-2-columns">
+                    <input id="suburb-admin" type="text" placeholder="Suburb...">
+                </div>
+                <div>
+                    <label for="states-admin">State:</label>
+                </div>
+                <div>
+                    <label for="postcode-admin">Postcode:</label>
+                </div>
+                <div>
+                    <select id="states-admin">
+                      <option>Please Select an Option: </option>
+                      <option>SA</option>
+                      <option>VIC</option>
+                      <option>QLD</option>
+                      <option>WA</option>
+                      <option>NT</option>
+                      <option>TAS</option>
+                      <option>ACT</option>
+                      <option>NSW</option>
+                    </select>
+                </div>
+                <div>
+                    <input id="postcode-admin" type="text" placeholder="Postcode...">
+                </div>
+                <div class="button-admin-div">
+                    <button class="button-admin">Get Check-in History</button>
+                </div>
+                <div class="address-toggle-button-admin">
+                    <button onclick="showHideTogglesAdmin()">Search by Address</button>
+                </div>
+            </section>
+        </div>
+        <div class="not-hidden">
+            <section class="toggles-admin">
+                <div class="span-2-columns">
+                    <label>Search by given name, surname, or both:</label>
+                </div>
+                <div>
+                    <input id="fname-admin" type="text" placeholder="Given Name">
+                </div>
+                <div>
+                    <input id="sname-admin" type="text" placeholder="Last Name">
+                </div>
+                <div class="span-2-columns">
+                    <label>Search by Venue Name:</label>
+                </div>
+                <div class="span-2-columns">
+                    <input id="vname-admin" type="text" placeholder="Venue Name...">
+                </div>
+                <div>
+                    <label>Enter date:</label>
+                </div>
+                <div></div>
+                <div>
+                    <input id="date-admin" type="date">
+                </div>
+                <div></div>
+                <div>
+                    <label>Enter Start of Timeframe:</label>
+                </div>
+                <div></div>
+                <div>
+                    <input id="sTime-admin" type="time">
+                </div>
+                <div></div>
+                <div>
+                    <label>Enter End of Timeframe:</label>
+                </div>
+                <div></div>
+                <div>
+                    <input id="eTime-admin" type="time">
+                </div>
+                <div></div>
+                <div class="button-admin-div">
+                    <button class="button-admin" onclick="refineSearchAdmin()">Get Check-in History</button>
+                </div>
+                <div class="address-toggle-button-admin">
+                    <button id="toggle-button-admin" onclick="showHideTogglesAdmin()">Search by Address</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="table-admin" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Contact No.</th>
+                    <th>Venue ID</th>
+                    <th>Venue Contact No.</th>
+                    <th>Check-in Date</th>
+                    <th>Check-in Time</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="search-again" style="display:none;" onclick="backToSearch()"><button>Go back to Search</button></div>
+    <script src="javascripts/filter.js"></script>
+    <script >
+        $(function (){
+            $(".dashboard").load("dashboardTemplateHealth.html");
+        });
+    </script>
+</body>
+</html>

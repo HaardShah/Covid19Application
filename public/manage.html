@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Manage Users</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+        <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+    </head>
+
+    <body  id="body" onload="checkAdmin()" style="display:none;">
+        <div class="manage_user" style="display: none">
+            <header>Manage Users</header>
+            <div class= "dashboard"></div>
+            <!--<button onclick="show_health_official_homepage()" class="back_to_home_button"><</button>-->
+            <button onclick="show_venue()" class="back_to_home_button">Switch to Venue</button>
+            <div class="manage_section">
+                    <section class="search_section">
+
+                        <div>
+                            <label for="search_user">Delete by UserID: </label>
+                        </div>
+                        <div class="search_span">
+                            <input type="search" placeholder="UserID #" id="search_user">
+                        </div>
+
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                        <div></div>
+                        <div class="delete_button" onclick="deleteUser()"><button>Delete User</button></div>
+                    </section>
+            </div>
+        </div>
+
+        <div class="manage_venue" style="display: block">
+            <header>Manage Venue</header>
+            <div class= "dashboard"></div>
+            <!--<button onclick="show_health_official_homepage()" class="back_to_home_button"><</button>-->
+            <button onclick="show_user()" class="back_to_home_button">Switch to User</button>
+            <div class="manage_section">
+                    <section class="search_section">
+
+                        <div>
+                            <label for="search_venue">Delete by VenueID: </label>
+                        </div>
+                        <div class="search_span">
+                            <input type="search" placeholder="VenueID #" id="search_venue">
+                        </div>
+
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                        <div></div>
+                        <div class="delete_button" onclick="deleteVenue()"><button>Delete Venue</button></div>
+                    </section>
+            </div>
+        </div>
+
+    <script src="javascripts/manage_users.js"></script>
+    <script src="javascripts/page.js"></script>
+    <script >
+    $(function (){
+       $(".dashboard").load("dashboardTemplateHealth.html");
+
+    });
+
+</script>
+    </body>
+
+</html>

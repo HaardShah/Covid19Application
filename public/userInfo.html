@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Information</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+    <link rel="stylesheet" href="https://use.typekit.net/nmy2ljm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel = "icon" href = "stylesheets/images/covid_icon.png" type = "image/x-icon">
+
+</head>
+
+<body id="body" onload="checklogin();getUserInfo();" style="display:none;">
+    <div class= "dashboard">
+        </div>
+    <header>Edit Personal Information</header>
+    <div class="content-userinfo">
+        <section class="toggles-userinfo">
+            <div>
+                <label for="gname">Given name:</label>
+
+            </div>
+            <div><label for="lname">Last name:</label></div>
+            <div><input id="gname" type="text" placeholder="Given name" ></div>
+            <div>
+                <input id="lname" type="text" placeholder="Last Name">
+            </div>
+
+        <div>
+            <label for="dob">Date Of Birth:</label>
+        </div>
+        <div><label for="connumber">Contact Number:</label></div>
+
+        <div><input id="dob" type="date"></div>
+        <div >
+            <input id="connumber" type="text" placeholder="Contact Number">
+        </div>
+
+
+        <div class="span-2-columns">
+            <label for="email">Email:</label>
+        </div>
+        <div class="span-2-columns">
+            <input id="email" type="text" placeholder="Email">
+        </div>
+
+        <div >
+            <label for="streetnum">Street no:</label>
+        </div>
+        <div><label for="streetname">Street Name:</label></div>
+        <div>
+            <input  id="streetnum" type="text" placeholder="street number">
+        </div>
+        <div>
+            <input  id="streetname" type="text" placeholder="street name">
+        </div>
+        <div>
+            <label for="suburb">Suburb:</label>
+        </div>
+
+        <div class="span-2-columns">
+            <input  id="suburb" type="text" placeholder="suburb">
+        </div>
+        <div><label for="postcode">Post code:</label></div>
+        <div>
+            <label for="state">State:</label>
+        </div>
+        <div>
+            <input  id="postcode" type="number" placeholder="postcode">
+        </div>
+
+        <div class="state_input_span">
+                        <select name="state" id="state" required>
+                        <option value="" disabled selected hidden>State</option>
+                        <option value="SA">SA</option>
+                        <option value="VIC">VIC</option>
+                        <option value="NSW">NSW</option>
+                        <option value="QLD">QLD</option>
+                        <option value="WA">WA</option>
+                        <option value="TAS">TAS</option>
+                      </select></div>
+                      <!--<div></div>-->
+        <label class="email_notis">
+            <input class="checkbox" type="checkbox" id="emailNoti">Receive email notifications for current hotspots
+        </label>
+
+        <div class="span-2-columns">
+            <button class="button-userinfo" onclick="editUserInfo()">Submit</button>
+        </div>
+        <div></div><div></div>
+        </section>
+    </div>
+    <script>
+    $(function (){
+       $(".dashboard").load("dashboardTemplateUser.html");
+
+    });
+
+</script>
+ <script src="javascripts/page.js"></script>
+</body>
+

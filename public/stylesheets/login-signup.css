@@ -1,0 +1,332 @@
+*
+{
+    box-sizing: border-box;
+    font-family: mr-eaves-modern, sans-serif;
+    margin: auto;
+}
+
+body
+{
+    background: url(images/bg.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+header
+{
+    font-weight: normal;
+    font-size: 300%;
+    background-color: rgba(49, 68, 85, 0.9);
+    text-align: center;
+    box-shadow: 0 20px 20px 0 rgb(49 68 85/80%);
+    padding: 0.5%;
+    /* background-image: url(images/bg.png);
+    background-color: rgb(85, 99, 129);
+    background-blend-mode: multiply; */
+}
+
+footer
+{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0.4%;
+    font-size: 2vh;
+    color: rgb(70, 68, 68);
+    text-align: right;
+}
+
+.login_form footer
+{
+    position: fixed;
+}
+
+label
+{
+    font-weight: bold;
+    font-size: 2.9vh;
+}
+
+hr
+{
+    margin: 2.5%;
+}
+
+button
+{
+    padding: 10px;
+    background-color: rgb(49, 68, 85);
+    color: white;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    cursor: pointer;
+    border: none;
+    font-size: 2.7vh;
+
+}
+
+.g-signin2
+{
+    padding: 0px;
+    background-color: whitesmoke;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 3%;
+    cursor: pointer;
+    border: none;
+    font-size: 2.7vh;
+}
+
+.info_input
+{
+    padding: 10px;
+    width: 100%;
+    background-color: gainsboro;
+    border: none;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    font-size: 2.9vh;
+}
+
+.password_input
+{
+    padding: 10px;
+    width: 100%;
+    background-color: gainsboro;
+    border: none;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 2.9vh;
+}
+
+/* Start of login specific CSS */
+
+
+.login_container
+{
+    padding: 8px;
+    max-width: 60%; /* Was 50 before */
+    display: flex;
+    background-color: whitesmoke;
+
+    margin-top: 8.5vh;
+
+    box-shadow: 0 20px 20px 0 rgb(0 0 0 /30%);
+    border: 2px solid #888;
+
+}
+
+/* Vertical line element taken from W3 schools: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_social_login */
+.vertical_line {
+position: absolute;
+left: 61vw;
+transform: translate(-50%);
+border: 2px solid rgb(121, 135, 148);
+height: 66vh;
+}
+.vertical_line_text {
+position: absolute;
+top: 33vh;
+transform: translate(-50%, -50%);
+background-color: gainsboro;
+border: none;
+border-radius: 50%;
+padding: 8px 10px;
+}
+
+
+.login_area
+{
+    width: 60%;
+    margin: 2% 2% 1% 2% ;
+    border-right: none;
+}
+.radio_buttons
+{
+    display: inline-block;
+    width: 100%;
+    cursor: default;
+    font-size: 2.7vh;
+}
+.radio_css
+{
+    margin-top: 4vh;
+    margin-left: 3.5vw;
+    cursor: pointer;
+    font-size: 2.7vh;
+}
+.create_label_text
+{
+    text-align: center;
+    font-size: 2.7vh;
+}
+
+
+.socials_area
+{
+    width: 25%;
+    border-left: none;
+    margin-right: 3.5%;
+}
+.facebook_button
+{
+    background-color: #3f5ab4;
+}
+.google_button
+{
+    background-color: #be354c;
+}
+/* End of login specific CSS */
+
+
+/* Start of signup specific CSS */
+.signup_container
+{
+    padding: 8px;
+    max-width: 60vw;
+    background-color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    box-shadow: 0 20px 20px 0 rgb(0 0 0 /30%);
+    border: 2px solid #888;
+}
+
+.signup_container_field
+{
+    display: grid;
+    width: 100%;
+    padding: 3%;
+    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+    grid-row-gap: 2vh;
+    column-gap: 3%;
+}
+
+h1
+{
+    font-size: 3.5vw;
+}
+
+.sign_up_heading
+{
+    margin: 0 0 0 0;
+}
+
+.back_to_login_div
+{
+    margin-right: 0;
+    margin-top: 0;
+    font-size: 2.9vh;
+}
+
+.signup_labels
+{
+    margin-left: 0;
+}
+
+.left_input_span
+{
+    width: 100%;
+    grid-column: 1 / span 2;
+    margin: 0 0 0 0;
+}
+.right_input_span
+{
+    width: 100%;
+    grid-column: 3 / span 2;
+    margin: 0 0 0 0;
+}
+.email_input_span
+{
+    width: 100%;
+    grid-column: 1 / span 4;
+    margin: 0 0 0 0;
+}
+.str_num_input_span
+{
+    width: 100%;
+    margin: 0 0 0 0;
+    grid-column: 1 / span 2;
+}
+.str_name_input_span
+{
+    width: 100%;
+    grid-column: 3 / span 2;
+    margin: 0 0 0 0;
+}
+.suburb_input_span
+{
+    width: 100%;
+    grid-column: 1 / span 2;
+    margin: 0 0 0 0;
+}
+.postcode_input_span
+{
+    width: 100%;
+    margin: 0 0 0 0;
+}
+.state_input_span
+{
+    width: 100%;
+    margin: 0 0 0 0;
+}
+
+select
+{
+    padding: 10px;
+    width: 100%;
+    background-color: gainsboro;
+    border: none;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    font-size: 2.9vh;
+    color: black;
+    /* color: gray; */
+}
+
+.tANDc_label
+{
+    display: block;
+    margin: 0 0 0 0;
+    width: 100%;
+    grid-column: 1 / span 2;
+
+}
+
+.email_notis
+{
+    display: block;
+    margin: 0 0 0 0;
+    width: 100%;
+    grid-column: 1 / span 2;
+}
+
+.submit_button
+{
+    width: 100%;
+    grid-column: 1 / span 4;
+}
+
+.checkbox_class
+{
+    grid-column: 3 / span 2;
+    font-weight: bold;
+    font-size: 2.9vh;
+    margin: 0 0 0 0;
+
+}
+
+.checkbox
+{
+    margin-right: 0.3vw;
+}
+
+a
+{
+    color: blue;
+}
+
+
+/* End of signup specific CSS */
